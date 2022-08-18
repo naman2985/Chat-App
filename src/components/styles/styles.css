@@ -1,0 +1,175 @@
+/* app.js */
+.top-bar{
+    background-color: rgb(202, 146, 255);
+    width: 100%;
+    height: 50px;
+}
+
+.logout{
+    background-color: #ca92ff;
+    color: white;
+    border-width: 0;
+    float: right;
+}
+
+.app{
+    display: flex;
+}
+
+/*chat-interface*/
+.chat-screen{
+    flex: 3;
+    width: 900px;
+    border-left: 3px solid antiquewhite;
+    background-color: #e6e6e6;
+}
+
+.scrollable{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.text-bar{
+    float: bottom;
+    bottom: 0;
+    margin: 0px 10px 20px auto;
+    position: fixed;
+}
+
+.chat-1{
+    display: block;
+    background-color: purple;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 8px;
+    margin: 10px auto;
+    margin-right: 10px;
+    width: fit-content;
+    max-width: 400px;
+}
+
+.chat-2{
+    display: block;
+    background-color: rgb(189, 189, 189);
+    color: black;
+    border-radius: 10px;
+    padding: 5px 8px;
+    margin: 10px;
+    width: fit-content;
+    max-width: 400px;
+}
+
+.text-bar input{
+    width: 400px;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid gray;
+    border-radius: 25px;
+    padding-left: 10px;
+}
+
+.send{
+    font-size: 16px;
+    margin-left: 20px;
+    height: 40px;
+    width: 100px;
+    background-color: rgb(69, 154, 250);
+    border: 0px solid black;
+    border-radius: 20px;
+}
+/*chat-list*/
+
+.left-pane{
+    width: 440px;
+}
+
+.list{
+    flex: 1;
+    width: 100%;
+}
+
+.item{
+    text-align: left;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-width: 0px;
+    border-bottom: 1px solid rgb(207, 207, 207);
+}
+
+.search{
+    display: block;
+    width: 98%;
+    height: 2.5em;
+    border: 1px solid rgb(201, 201, 201);
+}
+
+/* home.js */
+.form-user{
+    border: 1px solid gray;
+    padding: 0%;
+    width: 30%;
+    margin: 30px auto;
+}
+
+.form-user-header{
+    background-color: rgb(180, 180, 180);
+    margin: 0px;
+    padding: 10px 10px 0px;
+}
+
+.form-user-body{
+    padding: 20px 30px;
+}
+
+.tab{
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 5px;
+    border-width: 0;
+}
+
+.tab:hover{
+    cursor: pointer;
+}
+
+.tab a{
+    color: black;
+    text-decoration: none;
+}
+
+.tab-active{
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 0%;
+}
+
+/* 
+register.js 
+login.js
+*/
+.form-input{
+    font-size: 15px;
+    padding: 5px;
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+} 
+
+.form-submit{
+    background-color: black;
+    font-size: 15px;
+    color: white;
+    display: block;
+    width: 30%;
+    margin: 10px auto;
+    padding: 5px;
+    border-width: 0px;
+}
+
+.form-error{
+    font-size: small;
+    color: red;
+}

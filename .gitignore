@@ -11,6 +11,9 @@
 # production
 /build
 
+# saving login credentials
+credentials.txt
+
 # misc
 .DS_Store
 .env.local
@@ -21,3 +24,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# in the node directory
+/backend/node_modules

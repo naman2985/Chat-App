@@ -1,24 +1,63 @@
-import logo from './logo.svg';
 import './App.css';
+import ChatWindow from './components/chat-interface';
+import ChatList from './components/chat-list';
+import { useState, useEffect } from 'react';
+import User from './components/home';
+import axios from 'axios';
 
 function App() {
+  const [isValidated, setValidated] = useState(false);
+  const [sender, setsender] = useState(null);
+  const [receiver, setreceiver] = useState(null);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      await axios.get("http://localhost:3001/users/all").then((u) => {
+        setUsers(u.data);
+        console.log(u);
+      });
+      /*const loggedInUser = localStorage.getItem("user");
+      if (loggedInUser) {
+        console.log(loggedInUser);
+        setsender(JSON.parse(loggedInUser));
+        setValidated(true);
+      }*/
+    }
+    fetchData();
+  }, []);
+  
+  function changeValidationState(user, valid) {
+    setsender(user);
+    setValidated(valid);
+    localStorage.setItem("user", JSON.stringify(user));
+  }
+
+  function logout() {
+    setValidated(false);
+    setsender(null);
+    console.log(localStorage.getItem('user'));
+    localStorage.clear();
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {isValidated ? (
+        <>
+          <div className="top-bar">
+            <button onClick={logout} className="logout">
+              Logout
+            </button>
+          </div>
+          <div className="app">
+            <ChatList users={users} sender={sender} setReceiver={setreceiver} />
+            <ChatWindow sender={sender} receiver={receiver} />
+          </div>
+        </>
+      ) : (
+        <User changeValidationState={changeValidationState} />
+      )}
+    </>
   );
 }
 

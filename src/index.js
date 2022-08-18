@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+const CHATS = [
+    { msg: 'Hi', sender: 0 },
+    { msg: 'Hi, there', sender: 1 },
+    { msg: 'Have you seen the UI for the chat window that I have built?', sender: 0 },
+    { msg: 'Yes it looks cool', sender: 1 },
+    { msg: 'You must add more features to it', sender: 1}
+]
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <App chats={CHATS}/>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
